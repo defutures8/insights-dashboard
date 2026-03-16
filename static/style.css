@@ -1,0 +1,81 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Georgia', serif; background: #f9f9f7; color: #1a1a1a; }
+
+header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 40px; border-bottom: 1px solid #ddd;
+  background: #fff;
+}
+.brand { font-size: 1.4rem; font-weight: bold; color: #cc0000; }
+nav { font-size: 0.85rem; color: #555; }
+
+main { padding: 40px; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 32px;
+}
+
+.card {
+  background: #fff;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e8e8e8;
+  transition: box-shadow 0.2s;
+}
+.card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+
+.card-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-body { padding: 16px 16px 8px; flex: 1; }
+
+.tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: #cc0000;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1.4;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.card-summary {
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+.card-meta {
+  padding: 10px 16px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: #999;
+  border-top: 1px solid #eee;
+}
+```
+
+---
+
+**`requirements.txt`**
+```
+flask
+feedparser
+requests
+gunicorn
