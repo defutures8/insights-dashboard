@@ -12,6 +12,8 @@
   </header>
 
   <main>
+
+    <!-- Forbes + MIT row -->
     <div class="grid">
       {% for article in articles %}
       <a href="{{ article.link }}" target="_blank" class="card">
@@ -26,11 +28,37 @@
         </div>
         <div class="card-meta">
           <span>{{ article.source }}</span>
-          <span>{{ article.date[:16] if article.date else '' }}</span>
+          <span>{{ article.date }}</span>
         </div>
       </a>
       {% endfor %}
     </div>
+
+    <!-- LinkedIn row -->
+    <div class="section-header">
+      <span class="linkedin-icon">in</span>
+      <h2>LinkedIn Insights</h2>
+    </div>
+    <div class="grid">
+      {% for post in linkedin %}
+      <a href="{{ post.link }}" target="_blank" class="card">
+        <div class="card-image">
+          <img src="{{ post.image }}" alt="{{ post.title }}"
+               onerror="this.src='https://placehold.co/400x220/0a66c2/fff?text=LinkedIn'">
+        </div>
+        <div class="card-body">
+          <span class="tag linkedin-tag">{{ post.tag }}</span>
+          <h2 class="card-title">{{ post.title }}</h2>
+          <p class="card-summary">{{ post.summary }}</p>
+        </div>
+        <div class="card-meta">
+          <span>{{ post.source }}</span>
+          <span>{{ post.date }}</span>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+
   </main>
 </body>
 </html>
