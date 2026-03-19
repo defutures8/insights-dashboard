@@ -13,7 +13,7 @@ main { padding: 40px; }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 32px;
 }
 
@@ -69,13 +69,3 @@ main { padding: 40px; }
   color: #999;
   border-top: 1px solid #eee;
 }
-```
-
----
-
-**`requirements.txt`**
-```
-flask
-feedparser
-requests
-gunicorn
