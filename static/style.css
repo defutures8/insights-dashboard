@@ -69,3 +69,9 @@ main { padding: 40px; }
   color: #999;
   border-top: 1px solid #eee;
 }
+
+.brand-logo {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
