@@ -80,17 +80,17 @@
     </div>
     {% endif %}
 
-    <div class="grid grid-4">
-      {% for article in four_col %}
-      <a href="{{ article.link }}" target="_blank" class="card card-compact">
+    <div class="grid grid-3">
+      {% for article in three_col %}
+      <a href="{{ article.link }}" target="_blank" class="card">
         <div class="card-image">
           <img src="{{ article.image }}" alt="{{ article.title }}"
-               onerror="this.src='https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=240&fit=crop'">
+               onerror="this.src='https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&h=340&fit=crop'">
         </div>
         <div class="card-body">
           <span class="tag">{{ article.tag }}</span>
-          <h2 class="card-title small-title">{{ article.title }}</h2>
-          <p class="card-summary small-summary">{{ article.summary }}</p>
+          <h2 class="card-title">{{ article.title }}</h2>
+          <p class="card-summary">{{ article.summary }}</p>
         </div>
         <div class="card-meta">
           <span class="meta-type">{{ article.type }} &bull; {{ article.date }}</span>
