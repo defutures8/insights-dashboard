@@ -8,19 +8,40 @@ FEEDS = {
     "Harvard Business Review": "https://feeds.hbr.org/harvardbusiness",
 }
 
-def extract_image(entry):
+FALLBACK_IMAGES = {
+    "Forbes": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=340&fit=crop",
+    "MIT": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=340&fit=crop",
+    "Harvard": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=340&fit=crop",
+    "LinkedIn": "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=340&fit=crop",
+}
+
+def extract_image(entry, source=""):
     if hasattr(entry, "media_thumbnail") and entry.media_thumbnail:
-        return entry.media_thumbnail[0].get("url", "")
+        url = entry.media_thumbnail[0].get("url", "")
+        if url:
+            return url
     if hasattr(entry, "media_content") and entry.media_content:
-        return entry.media_content[0].get("url", "")
+        for m in entry.media_content:
+            if m.get("url", ""):
+                return m.get("url", "")
+    for enc in getattr(entry, "enclosures", []):
+        if enc.get("type", "").startswith("image"):
+            return enc.get("href", "")
     for link in getattr(entry, "links", []):
         if link.get("type", "").startswith("image"):
             return link.get("href", "")
-    summary = entry.get("summary", "") or ""
-    match = re.search(r'<img[^>]+src=["\']([^"\']+)["\']', summary)
+    content = ""
+    if hasattr(entry, "content") and entry.content:
+        content = entry.content[0].get("value", "")
+    if not content:
+        content = entry.get("summary", "") or ""
+    match = re.search(r'<img[^>]+src=["\']([^"\']+)["\']', content)
     if match:
         return match.group(1)
-    return ""
+    for key in FALLBACK_IMAGES:
+        if key.lower() in source.lower():
+            return FALLBACK_IMAGES[key]
+    return "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&h=340&fit=crop"
 
 def get_all_articles():
     articles = []
@@ -35,7 +56,7 @@ def get_all_articles():
                     "link": entry.get("link", "#"),
                     "source": source,
                     "date": pub[:16] if pub else "",
-                    "image": extract_image(entry),
+                    "image": extract_image(entry, source),
                     "tag": source.replace(" Tech", "").replace(" AI", ""),
                     "type": "Article",
                 })
@@ -43,24 +64,24 @@ def get_all_articles():
             print(f"Feed error for {source}: {e}")
     return articles
 
-def get_articles():
-    return get_all_articles()[:9]
-
 def get_hero_article():
     articles = get_all_articles()
     return articles[0] if articles else None
 
 def get_recommended():
     articles = get_all_articles()
-    return articles[1:6]
+    return articles[1:4]
 
 def get_three_col():
     articles = get_all_articles()
-    return articles[6:9]
+    return articles[4:7]
 
 def get_four_col():
     articles = get_all_articles()
-    return articles[9:13]
+    return articles[7:11]
+
+def get_articles():
+    return get_all_articles()[:9]
 
 def get_linkedin_posts():
     return [
@@ -70,7 +91,7 @@ def get_linkedin_posts():
             "link": "https://www.linkedin.com/feed/",
             "source": "LinkedIn",
             "date": "Apr 7, 2026",
-            "image": "https://placehold.co/600x340/0a66c2/ffffff?text=AI+Governance",
+            "image": "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=340&fit=crop",
             "tag": "LinkedIn",
             "type": "Post",
         },
@@ -80,7 +101,7 @@ def get_linkedin_posts():
             "link": "https://www.linkedin.com/feed/",
             "source": "LinkedIn",
             "date": "Apr 6, 2026",
-            "image": "https://placehold.co/600x340/0a66c2/ffffff?text=Federal+AI",
+            "image": "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&h=340&fit=crop",
             "tag": "LinkedIn",
             "type": "Post",
         },
@@ -90,7 +111,7 @@ def get_linkedin_posts():
             "link": "https://www.linkedin.com/feed/",
             "source": "LinkedIn",
             "date": "Apr 5, 2026",
-            "image": "https://placehold.co/600x340/0a66c2/ffffff?text=Mission+Value",
+            "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&h=340&fit=crop",
             "tag": "LinkedIn",
             "type": "Post",
         },
@@ -100,7 +121,7 @@ def get_linkedin_posts():
             "link": "https://www.linkedin.com/feed/",
             "source": "LinkedIn",
             "date": "Apr 4, 2026",
-            "image": "https://placehold.co/600x340/0a66c2/ffffff?text=GovCon+Digital",
+            "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&h=340&fit=crop",
             "tag": "LinkedIn",
             "type": "Post",
         },

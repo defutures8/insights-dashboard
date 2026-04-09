@@ -8,7 +8,6 @@
 </head>
 <body>
 
-  <!-- Header -->
   <header>
     <div class="header-left">
       <img src="/static/logo.png" alt="Granville Systems" class="brand-logo">
@@ -28,7 +27,6 @@
 
   <main>
 
-    <!-- Page heading -->
     <div class="page-heading">
       <div class="page-heading-left">
         <h1>Insights</h1>
@@ -38,23 +36,20 @@
       </div>
     </div>
 
-    <!-- Filter bar -->
     <div class="filter-bar">
       <span class="filter-label">Filter by:</span>
-      <button class="filter-btn">Industries ▾</button>
-      <button class="filter-btn">Services ▾</button>
-      <button class="filter-btn">Featured Topics ▾</button>
-      <button class="filter-btn">Types ▾</button>
+      <button class="filter-btn">Industries &#9662;</button>
+      <button class="filter-btn">Services &#9662;</button>
+      <button class="filter-btn">Featured Topics &#9662;</button>
+      <button class="filter-btn">Types &#9662;</button>
     </div>
 
-    <!-- Hero + Recommended -->
     {% if hero %}
     <div class="hero-section">
       <a href="{{ hero.link }}" target="_blank" class="hero-card">
         <div class="hero-image">
-          <img src="{{ hero.image if hero.image else 'https://placehold.co/800x480/1a1a2e/fff?text=Insight' }}"
-               alt="{{ hero.title }}"
-               onerror="this.src='https://placehold.co/800x480/1a1a2e/fff?text=Insight'">
+          <img src="{{ hero.image }}" alt="{{ hero.title }}"
+               onerror="this.src='https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=480&fit=crop'">
         </div>
         <div class="hero-body">
           <span class="tag">{{ hero.tag }}</span>
@@ -70,9 +65,9 @@
       <div class="recommended-panel">
         <h3 class="recommended-title">Recommended</h3>
         <div class="recommended-list">
-          {% for i, item in enumerate(recommended) %}
+          {% for item in recommended %}
           <a href="{{ item.link }}" target="_blank" class="recommended-item">
-            <span class="rec-number">{{ i + 1 }}</span>
+            <span class="rec-number">{{ loop.index }}</span>
             <div class="rec-body">
               <span class="tag small-tag">{{ item.tag }}</span>
               <p class="rec-title">{{ item.title }}</p>
@@ -85,14 +80,12 @@
     </div>
     {% endif %}
 
-    <!-- 3-column row -->
     <div class="grid grid-3">
       {% for article in three_col %}
       <a href="{{ article.link }}" target="_blank" class="card">
         <div class="card-image">
-          <img src="{{ article.image if article.image else 'https://placehold.co/600x340/1a1a2e/fff?text=Insight' }}"
-               alt="{{ article.title }}"
-               onerror="this.src='https://placehold.co/600x340/1a1a2e/fff?text=Insight'">
+          <img src="{{ article.image }}" alt="{{ article.title }}"
+               onerror="this.src='https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&h=340&fit=crop'">
         </div>
         <div class="card-body">
           <span class="tag">{{ article.tag }}</span>
@@ -107,14 +100,12 @@
       {% endfor %}
     </div>
 
-    <!-- 4-column row -->
     <div class="grid grid-4">
       {% for article in four_col %}
       <a href="{{ article.link }}" target="_blank" class="card card-compact">
         <div class="card-image">
-          <img src="{{ article.image if article.image else 'https://placehold.co/400x240/1a1a2e/fff?text=Insight' }}"
-               alt="{{ article.title }}"
-               onerror="this.src='https://placehold.co/400x240/1a1a2e/fff?text=Insight'">
+          <img src="{{ article.image }}" alt="{{ article.title }}"
+               onerror="this.src='https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=240&fit=crop'">
         </div>
         <div class="card-body">
           <span class="tag">{{ article.tag }}</span>
@@ -129,7 +120,6 @@
       {% endfor %}
     </div>
 
-    <!-- LinkedIn section -->
     <div class="section-header">
       <span class="linkedin-icon">in</span>
       <h2>LinkedIn Insights</h2>
@@ -139,7 +129,7 @@
       <a href="{{ post.link }}" target="_blank" class="card card-compact">
         <div class="card-image">
           <img src="{{ post.image }}" alt="{{ post.title }}"
-               onerror="this.src='https://placehold.co/400x240/0a66c2/fff?text=LinkedIn'">
+               onerror="this.src='https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=240&fit=crop'">
         </div>
         <div class="card-body">
           <span class="tag linkedin-tag">{{ post.tag }}</span>
@@ -154,7 +144,6 @@
       {% endfor %}
     </div>
 
-    <!-- CTA Banner -->
     <div class="cta-banner">
       <div class="cta-left">
         <h2>Granville Webinars</h2>
