@@ -1,25 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Granville Systems | Insights</title>
+  <meta charset="UTF-8">
+  <title>Granville Systems | Insights</title>
   <link rel="stylesheet" href="/static/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
   <header>
-    <img src="/static/logo.png" alt="Granville Systems Corporation" class="brand-logo">
-    <nav>Industries | Services | Digital | About</nav>
+    <div class="header-left">
+      <img src="/static/logo.png" alt="Granville Systems" class="brand-logo">
+    </div>
+    <nav class="header-nav">
+      <a href="#">Industries</a>
+      <a href="#">Services</a>
+      <a href="#">Digital</a>
+      <a href="#" class="active">Insights</a>
+      <a href="#">About</a>
+    </nav>
+    <div class="header-right">
+      <span class="nav-icon">&#9906;</span>
+      <span class="nav-icon">&#128278;</span>
+    </div>
   </header>
 
   <main>
 
-    <!-- Forbes + MIT row -->
+    <!-- Page heading -->
+    <div class="page-heading">
+      <h1>Insights</h1>
+    </div>
+
+    <!-- Forbes + MIT cards -->
     <div class="grid">
       {% for article in articles %}
       <a href="{{ article.link }}" target="_blank" class="card">
         <div class="card-image">
           <img src="{{ article.image }}" alt="{{ article.title }}"
-               onerror="this.src='https://placehold.co/400x220/1a1a2e/fff?text=Insight'">
+               onerror="this.src='https://placehold.co/600x340/1a1a2e/fff?text=Insight'">
         </div>
         <div class="card-body">
           <span class="tag">{{ article.tag }}</span>
@@ -27,14 +46,14 @@
           <p class="card-summary">{{ article.summary }}</p>
         </div>
         <div class="card-meta">
-          <span>{{ article.source }}</span>
-          <span>{{ article.date }}</span>
+          <span class="meta-type">{{ article.source }}</span>
+          <span class="meta-date">{{ article.date }}</span>
         </div>
       </a>
       {% endfor %}
     </div>
 
-    <!-- LinkedIn row -->
+    <!-- LinkedIn section -->
     <div class="section-header">
       <span class="linkedin-icon">in</span>
       <h2>LinkedIn Insights</h2>
@@ -44,7 +63,7 @@
       <a href="{{ post.link }}" target="_blank" class="card">
         <div class="card-image">
           <img src="{{ post.image }}" alt="{{ post.title }}"
-               onerror="this.src='https://placehold.co/400x220/0a66c2/fff?text=LinkedIn'">
+               onerror="this.src='https://placehold.co/600x340/0a66c2/fff?text=LinkedIn'">
         </div>
         <div class="card-body">
           <span class="tag linkedin-tag">{{ post.tag }}</span>
@@ -52,19 +71,18 @@
           <p class="card-summary">{{ post.summary }}</p>
         </div>
         <div class="card-meta">
-          <span>{{ post.source }}</span>
-          <span>{{ post.date }}</span>
+          <span class="meta-type">{{ post.source }}</span>
+          <span class="meta-date">{{ post.date }}</span>
         </div>
       </a>
       {% endfor %}
     </div>
-    
-    .brand-logo {
-  height: 60px;
-  width: auto;
-  object-fit: contain;
-}
 
   </main>
+
+  <footer>
+    <p>&copy; 2026 Granville Systems Corporation. All rights reserved.</p>
+  </footer>
+
 </body>
 </html>
