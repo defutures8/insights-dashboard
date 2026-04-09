@@ -2,14 +2,14 @@ import feedparser
 import re
 
 FEEDS = {
-    "Forbes Tech": "https://www.forbes.com/innovation/feed/",
-    "Forbes AI": "https://www.forbes.com/ai/feed/",
+    "McKinsey": "https://www.mckinsey.com/feeds/rss/latest-insights",
+    "McKinsey Digital": "https://www.mckinsey.com/feeds/rss/digital",
     "MIT Tech Review": "https://www.technologyreview.com/feed/",
     "Harvard Business Review": "https://feeds.hbr.org/harvardbusiness",
 }
 
 FALLBACK_IMAGES = {
-    "Forbes": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=340&fit=crop",
+    "McKinsey": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=340&fit=crop",
     "MIT": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=340&fit=crop",
     "Harvard": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=340&fit=crop",
     "LinkedIn": "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=340&fit=crop",
@@ -23,10 +23,8 @@ BLOCKLIST = [
     "shark",
     "Shark",
     "fake grass",
-    "Marvel"
-    "IMDB"
-    "Quordle"
     "Desalination",
+    "Download:",
 ]
 
 # Pinned articles always included
