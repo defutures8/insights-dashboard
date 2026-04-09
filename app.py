@@ -1,14 +1,25 @@
 from flask import Flask, render_template
-from fetcher import get_articles, get_linkedin_posts
+from fetcher import get_hero_article, get_recommended, get_three_col, get_four_col, get_linkedin_posts
 import os
 
 app = Flask(__name__)
 
+app.jinja_env.globals.update(enumerate=enumerate)
+
 @app.route("/")
 def index():
-    articles = get_articles()
+    hero = get_hero_article()
+    recommended = get_recommended()
+    three_col = get_three_col()
+    four_col = get_four_col()
     linkedin = get_linkedin_posts()
-    return render_template("index.html", articles=articles, linkedin=linkedin)
+    return render_template("index.html",
+        hero=hero,
+        recommended=recommended,
+        three_col=three_col,
+        four_col=four_col,
+        linkedin=linkedin,
+    )
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
