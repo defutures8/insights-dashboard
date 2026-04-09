@@ -2,20 +2,20 @@ import feedparser
 import re
 
 FEEDS = {
-    "McKinsey": "https://www.mckinsey.com/feeds/rss/latest-insights",
-    "McKinsey Digital": "https://www.mckinsey.com/feeds/rss/digital",
+    "McKinsey": "https://www.mckinsey.com/feeds/rss/all",
     "MIT Tech Review": "https://www.technologyreview.com/feed/",
     "Harvard Business Review": "https://feeds.hbr.org/harvardbusiness",
+    "Wired": "https://www.wired.com/feed/rss",
 }
 
 FALLBACK_IMAGES = {
     "McKinsey": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=340&fit=crop",
     "MIT": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=340&fit=crop",
     "Harvard": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=340&fit=crop",
+    "Wired": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=340&fit=crop",
     "LinkedIn": "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=340&fit=crop",
 }
 
-# Titles containing these words will be excluded
 BLOCKLIST = [
     "AstroTurf",
     "Wordle",
@@ -27,7 +27,6 @@ BLOCKLIST = [
     "Download:",
 ]
 
-# Pinned articles always included
 PINNED_ARTICLES = [
     {
         "title": "Mustafa Suleyman: AI development won't hit a wall anytime soon—here's why",
