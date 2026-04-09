@@ -3,23 +3,27 @@ import re
 
 FEEDS = {
     "Forbes": "https://www.forbes.com/innovation/feed/",
+    "Forbes Business": "https://www.forbes.com/business/feed/",
     "MIT Tech Review": "https://www.technologyreview.com/feed/",
     "Harvard Business Review": "https://feeds.hbr.org/harvardbusiness",
-    "McKinsey": "https://www.mckinsey.com/feeds/rss/all",
+    "VentureBeat": "https://venturebeat.com/feed/",
+    "TechCrunch": "https://techcrunch.com/feed/",
 }
 
 FALLBACK_IMAGES = {
     "Forbes": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=340&fit=crop",
-    "McKinsey": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=340&fit=crop",
     "MIT": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=340&fit=crop",
     "Harvard": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=340&fit=crop",
+    "VentureBeat": "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=600&h=340&fit=crop",
+    "TechCrunch": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=340&fit=crop",
     "LinkedIn": "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=340&fit=crop",
 }
 
 BLOCKLIST = [
+    # Word games
+    "Wordle", "Quordle", "crossword", "puzzle", "Hints And Answer",
     # Entertainment
     "WWE", "NFL", "NBA", "MLB", "UFC",
-    "Wordle", "crossword", "puzzle",
     "celebrity", "Celebrity",
     "movie", "Movie", "Netflix", "Disney",
     "TV show", "sitcom", "comedian",
@@ -28,11 +32,14 @@ BLOCKLIST = [
     "Grammy", "Oscar", "Emmy",
     # Nature/off-topic
     "shark", "Shark", "whale", "dolphin",
-    "AstroTurf", "fake grass", "Tarkov","Trader","NYT","Northern Lights","Aurora",
-    "Desalination", "Download:","Suleyman",
+    "AstroTurf", "fake grass",
+    "Desalination", "Download:",
     # Sports
     "Super Bowl", "World Series", "March Madness",
     "quarterback", "touchdown", "home run",
+    # Gaming
+    "video game", "Video Game", "Xbox", "PlayStation",
+    "Minecraft", "Fortnite", "Nintendo",
 ]
 
 PINNED_ARTICLES = [
@@ -84,7 +91,7 @@ def get_all_articles():
     for source, url in FEEDS.items():
         try:
             feed = feedparser.parse(url)
-            for entry in feed.entries[:6]:
+            for entry in feed.entries[:8]:
                 title = entry.get("title", "Untitled")
                 if is_blocked(title):
                     continue
@@ -96,7 +103,7 @@ def get_all_articles():
                     "source": source,
                     "date": pub[:16] if pub else "",
                     "image": extract_image(entry, source),
-                    "tag": source.replace(" Tech", "").replace(" AI", ""),
+                    "tag": source.replace(" Tech", "").replace(" AI", "").replace(" Business", ""),
                     "type": "Article",
                 })
         except Exception as e:
