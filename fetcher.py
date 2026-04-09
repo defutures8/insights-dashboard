@@ -2,29 +2,37 @@ import feedparser
 import re
 
 FEEDS = {
-    "McKinsey": "https://www.mckinsey.com/feeds/rss/all",
+    "Forbes": "https://www.forbes.com/innovation/feed/",
     "MIT Tech Review": "https://www.technologyreview.com/feed/",
     "Harvard Business Review": "https://feeds.hbr.org/harvardbusiness",
-    "Wired": "https://www.wired.com/feed/rss",
+    "McKinsey": "https://www.mckinsey.com/feeds/rss/all",
 }
 
 FALLBACK_IMAGES = {
+    "Forbes": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=340&fit=crop",
     "McKinsey": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=340&fit=crop",
     "MIT": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=340&fit=crop",
     "Harvard": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=340&fit=crop",
-    "Wired": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=340&fit=crop",
     "LinkedIn": "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=340&fit=crop",
 }
 
 BLOCKLIST = [
-    "AstroTurf",
-    "Wordle",
-    "WWE",
-    "shark",
-    "Shark",
-    "fake grass",
-    "Desalination",
-    "Download:",
+    # Entertainment
+    "WWE", "NFL", "NBA", "MLB", "UFC",
+    "Wordle", "crossword", "puzzle",
+    "celebrity", "Celebrity",
+    "movie", "Movie", "Netflix", "Disney",
+    "TV show", "sitcom", "comedian",
+    "Invincible", "Marvel", "DC Comics",
+    "music", "album", "singer", "rapper",
+    "Grammy", "Oscar", "Emmy",
+    # Nature/off-topic
+    "shark", "Shark", "whale", "dolphin",
+    "AstroTurf", "fake grass",
+    "Desalination", "Download:",
+    # Sports
+    "Super Bowl", "World Series", "March Madness",
+    "quarterback", "touchdown", "home run",
 ]
 
 PINNED_ARTICLES = [
