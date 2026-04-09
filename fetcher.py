@@ -15,6 +15,31 @@ FALLBACK_IMAGES = {
     "LinkedIn": "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=340&fit=crop",
 }
 
+# Titles containing these words will be excluded
+BLOCKLIST = [
+    "AstroTurf",
+    "Wordle",
+    "WWE",
+    "shark",
+    "Shark",
+    "fake grass",
+    "Desalination",
+]
+
+# Pinned articles always included
+PINNED_ARTICLES = [
+    {
+        "title": "Mustafa Suleyman: AI development won't hit a wall anytime soon—here's why",
+        "summary": "The Microsoft AI CEO argues that the pace of AI progress will continue accelerating, driven by new architectures and massive investment in compute...",
+        "link": "https://www.technologyreview.com/2024/02/28/1089444/mustafa-suleyman-microsoft-ai-development/",
+        "source": "MIT Tech Review",
+        "date": "Apr 9, 2026",
+        "image": "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&h=340&fit=crop",
+        "tag": "MIT",
+        "type": "Article",
+    },
+]
+
 def extract_image(entry, source=""):
     if hasattr(entry, "media_thumbnail") and entry.media_thumbnail:
         url = entry.media_thumbnail[0].get("url", "")
@@ -43,15 +68,21 @@ def extract_image(entry, source=""):
             return FALLBACK_IMAGES[key]
     return "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&h=340&fit=crop"
 
+def is_blocked(title):
+    return any(word.lower() in title.lower() for word in BLOCKLIST)
+
 def get_all_articles():
-    articles = []
+    articles = list(PINNED_ARTICLES)
     for source, url in FEEDS.items():
         try:
             feed = feedparser.parse(url)
-            for entry in feed.entries[:4]:
+            for entry in feed.entries[:6]:
+                title = entry.get("title", "Untitled")
+                if is_blocked(title):
+                    continue
                 pub = entry.get("published", "")
                 articles.append({
-                    "title": entry.get("title", "Untitled"),
+                    "title": title,
                     "summary": entry.get("summary", "")[:180] + "...",
                     "link": entry.get("link", "#"),
                     "source": source,
@@ -65,20 +96,16 @@ def get_all_articles():
     return articles
 
 def get_hero_article():
-    articles = get_all_articles()
-    return articles[0] if articles else None
+    return get_all_articles()[0]
 
 def get_recommended():
-    articles = get_all_articles()
-    return articles[1:4]
+    return get_all_articles()[1:4]
 
 def get_three_col():
-    articles = get_all_articles()
-    return articles[4:7]
+    return get_all_articles()[4:7]
 
 def get_four_col():
-    articles = get_all_articles()
-    return articles[7:11]
+    return get_all_articles()[7:11]
 
 def get_articles():
     return get_all_articles()[:9]
