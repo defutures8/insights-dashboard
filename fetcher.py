@@ -28,8 +28,8 @@ BLOCKLIST = [
     "Grammy", "Oscar", "Emmy",
     # Nature/off-topic
     "shark", "Shark", "whale", "dolphin",
-    "AstroTurf", "fake grass",
-    "Desalination", "Download:",
+    "AstroTurf", "fake grass", "Tarkov","Trader","NYT","Northern Lights","Aurora",
+    "Desalination", "Download:","Suleyman",
     # Sports
     "Super Bowl", "World Series", "March Madness",
     "quarterback", "touchdown", "home run",
