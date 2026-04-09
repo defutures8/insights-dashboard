@@ -23,6 +23,9 @@ BLOCKLIST = [
     "shark",
     "Shark",
     "fake grass",
+    "Marvel"
+    "IMDB"
+    "Quordle"
     "Desalination",
 ]
 
