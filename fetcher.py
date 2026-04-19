@@ -21,7 +21,8 @@ FALLBACK_IMAGES = {
 
 BLOCKLIST = [
     # Word games
-    "Wordle", "Quordle", "crossword", "puzzle", "Hints And Answer",
+    "Wordle", "Quordle", "Strands", "NYT", "crossword", "puzzle",
+    "Hints", "Clues", "Answers Today",
     # Entertainment
     "WWE", "NFL", "NBA", "MLB", "UFC",
     "celebrity", "Celebrity",
@@ -40,17 +41,52 @@ BLOCKLIST = [
     # Gaming
     "video game", "Video Game", "Xbox", "PlayStation",
     "Minecraft", "Fortnite", "Nintendo",
+    # Apple/consumer tech
+    "MacBook", "iPhone", "iPad", "Apple Watch",
 ]
 
 PINNED_ARTICLES = [
     {
-        "title": "Mustafa Suleyman: AI development won't hit a wall anytime soon—here's why",
-        "summary": "The Microsoft AI CEO argues that the pace of AI progress will continue accelerating, driven by new architectures and massive investment in compute...",
-        "link": "https://www.technologyreview.com/2024/02/28/1089444/mustafa-suleyman-microsoft-ai-development/",
-        "source": "MIT Tech Review",
-        "date": "Apr 9, 2026",
+        "title": "The US Government Is Headed For Disruptive Digital Transformation in 2026",
+        "summary": "Federal agencies are scaling AI to modernize operations, enhance decision-making and improve mission outcomes. From defense to diplomacy, AI is emerging as a foundational pillar of digital transformation strategies across government...",
+        "link": "https://fedscoop.com/federal-government-digital-transformation-2026/",
+        "source": "FedScoop",
+        "date": "Jan 9, 2026",
+        "image": "https://images.unsplash.com/photo-1523437113738-bbd3cc89fb19?w=800&h=480&fit=crop",
+        "tag": "Federal AI",
+        "type": "Report",
+    },
+]
+
+PINNED_THREE_COL = [
+    {
+        "title": "AI World Models: What Are They And Why Should You Care",
+        "summary": "World models are getting substantial funding. What is a world model, how does it compare to a large language model, and what are the implications for business?...",
+        "link": "https://www.forbes.com/sites/forbestechcouncil/",
+        "source": "Forbes",
+        "date": "Sun, 19 Apr 2026",
+        "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&h=340&fit=crop",
+        "tag": "Forbes",
+        "type": "Article",
+    },
+    {
+        "title": "If You See This Microsoft Login—Your Account Is Being Hacked",
+        "summary": "Do not sign-in on this page — it's an attack and your account will be hijacked. Here is how to spot it and protect yourself...",
+        "link": "https://www.forbes.com/sites/forbestechcouncil/",
+        "source": "Forbes",
+        "date": "Sun, 19 Apr 2026",
+        "image": "https://images.unsplash.com/photo-1633419461186-7d40a38105ec?w=600&h=340&fit=crop",
+        "tag": "Forbes",
+        "type": "Article",
+    },
+    {
+        "title": "Before Claude, There Was A Paperclip With Eyes",
+        "summary": "From the first digital assistants to the AI agents of today. What our relationship with technology feels like in 2026...",
+        "link": "https://www.forbes.com/sites/forbestechcouncil/",
+        "source": "Forbes",
+        "date": "Sun, 19 Apr 2026",
         "image": "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&h=340&fit=crop",
-        "tag": "MIT",
+        "tag": "Forbes",
         "type": "Article",
     },
 ]
@@ -117,7 +153,9 @@ def get_recommended():
     return get_all_articles()[1:4]
 
 def get_three_col():
-    return get_all_articles()[4:7]
+    if PINNED_THREE_COL:
+        return PINNED_THREE_COL
+    return get_all_articles()[1:4]
 
 def get_four_col():
     return get_all_articles()[7:11]
