@@ -37,7 +37,7 @@
     </div>
 
     {% if hero %}
-    <div class="hero-section">
+    <div class="hero-solo">
       <a href="{{ hero.link }}" target="_blank" class="hero-card">
         <div class="hero-image">
           <img src="{{ hero.image }}" alt="{{ hero.title }}"
@@ -53,22 +53,6 @@
           </div>
         </div>
       </a>
-
-      <div class="recommended-panel">
-        <h3 class="recommended-title">Recommended</h3>
-        <div class="recommended-list">
-          {% for item in recommended %}
-          <a href="{{ item.link }}" target="_blank" class="recommended-item">
-            <span class="rec-number">{{ loop.index }}</span>
-            <div class="rec-body">
-              <span class="tag small-tag">{{ item.tag }}</span>
-              <p class="rec-title">{{ item.title }}</p>
-              <span class="rec-type">{{ item.type }}</span>
-            </div>
-          </a>
-          {% endfor %}
-        </div>
-      </div>
     </div>
     {% endif %}
 
