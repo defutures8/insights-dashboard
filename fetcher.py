@@ -162,7 +162,7 @@ def get_linkedin_posts():
     return [
              {
             "title": "The Conductor"
-            "summary:"Most organizations invest heavily in innovation but struggle to deliver results—the difference is not spending, it is coordination.",
+            "summary" :"The gap between innovation investment and mission delivery shows up in commercial enterprises and federal agencies alike",
             "link": "https://www.linkedin.com/feed/",
             "source": "LinkedIn",
             "date": "Apr 5, 2026",
@@ -172,7 +172,7 @@ def get_linkedin_posts():
         },
         {
             "title": "The Authorization Gap",
-            "summary": "Enterprise technology programs across every sector share a familiar pattern",
+            "summary":"Enterprise technology programs across every sector share a familiar pattern",
             "link": "https://www.linkedin.com/feed/",
             "source": "LinkedIn",
             "date": "Apr 7, 2026",
