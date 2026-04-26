@@ -2,8 +2,6 @@ import feedparser
 import re
 
 FEEDS = {
-    "Forbes": "https://www.forbes.com/innovation/feed/",
-    "Forbes Business": "https://www.forbes.com/business/feed/",
     "MIT Tech Review": "https://www.technologyreview.com/feed/",
     "Harvard Business Review": "https://feeds.hbr.org/harvardbusiness",
     "VentureBeat": "https://venturebeat.com/feed/",
@@ -11,7 +9,6 @@ FEEDS = {
 }
 
 FALLBACK_IMAGES = {
-    "Forbes": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=340&fit=crop",
     "MIT": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=340&fit=crop",
     "Harvard": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=340&fit=crop",
     "VentureBeat": "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=600&h=340&fit=crop",
@@ -164,7 +161,7 @@ def get_articles():
 def get_linkedin_posts():
     return [
         {
-            "title": "The Conductor in Orchestrating Value Actualization",
+            "title": "The Conductor: Orchestrating Value Actualization",
             "summary": "Initiatives start with intent, but seems to lose value in execution across the lifecycle.",
             "link": "https://www.linkedin.com/feed/",
             "source": "LinkedIn",
@@ -175,7 +172,7 @@ def get_linkedin_posts():
         },
                {
             "title": "Before Claude, There Was A Paperclip With Eyes",
-            "summary":"From the first digital assistants to the AI agents of today. Why 2026 feels like in 1996...?",
+            "summary":"From the first digital assistants to the AI agents of today. Why 2026 feels like 1996?",
             "link": "https://www.linkedin.com/feed/",
             "source": "LinkedIn",
             "date": "Apr 4, 2026",
@@ -184,7 +181,7 @@ def get_linkedin_posts():
             "type": "Post",
         },
         {
-            "title": "The 5 AI Skills that are cross sectors and cross functional",
+            "title": "The 5 AI Skills that cross sectors and functions",
             "summary": "From prompt engineering to ATO acceleration, agencies are moving fast into Q2 2026.",
             "link": "https://www.linkedin.com/feed/",
             "source": "LinkedIn",
