@@ -162,7 +162,7 @@ def get_linkedin_posts():
     return [
         {
             "title": "The Conductor: Orchestrating Value Actualization",
-            "summary": "Initiatives start with intent, but seems to lose value in execution across the lifecycle.",
+            "summary": "Initiatives start with intent, but seems to lose value in execution across the orchestration lifecycle.",
             "link": "https://www.linkedin.com/feed/",
             "source": "LinkedIn",
             "date": "Apr 5, 2026",
