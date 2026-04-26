@@ -161,8 +161,8 @@ def get_articles():
 def get_linkedin_posts():
     return [
              {
-            "title": "The Conductor"
-            "summary" :"The gap between innovation investment and mission delivery shows up in commercial enterprises and federal agencies alike",
+            "title": "The Conductor",
+            "summary": "If Investment alone drove Outcomes, most Organizations would already be Winning.",
             "link": "https://www.linkedin.com/feed/",
             "source": "LinkedIn",
             "date": "Apr 5, 2026",
@@ -172,7 +172,7 @@ def get_linkedin_posts():
         },
         {
             "title": "The Authorization Gap",
-            "summary":"Enterprise technology programs across every sector share a familiar pattern",
+            "summary": "It appears across enterprise and government, AI-driven programs are not failing, but waiting...",
             "link": "https://www.linkedin.com/feed/",
             "source": "LinkedIn",
             "date": "Apr 7, 2026",
@@ -205,12 +205,12 @@ def get_linkedin_posts():
 def get_youtube_posts():
     return [
         {
-            "title": "Federal Capture Planning - The Key to AI Opportunity in 2026",
-            "summary": "Research alone does not win government contracts  ",
-            "link": "https://www.youtube.com/watch?v=B7uah8vD9mc",
+            "title": "Is Chaos an Oppportunity for Government Contractors?",
+            "summary": "Chaos, Capture and Money - Neil McDonnell, GovCon chamber of commerce founder, Best8a.com Interview",
+            "link": "https://www.youtube.com/watch?v=lsWUiMhYhSc",
             "source": "YouTube",
             "date": "2026",
-            "image": "https://img.youtube.com/vi/B7uah8vD9mc/maxresdefault.jpg",
+            "image": "https://img.youtube.com/vi/lsWUiMhYhSc/maxresdefault.jpg",
             "tag": "YouTube",
             "type": "Video",
         },
