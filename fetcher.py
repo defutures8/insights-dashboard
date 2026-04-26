@@ -160,9 +160,9 @@ def get_articles():
 
 def get_linkedin_posts():
     return [
-             {
-            "title": "The Conductor",
-            "summary": "If Investment alone drove Outcomes, most Organizations would already be Winning.",
+        {
+            "title": "From Authorization to Actualization: Where Mission Value Breaks Down",
+            "summary": "Initiatives start with intent, but seems to lose value in execution across the lifecycle.",
             "link": "https://www.linkedin.com/feed/",
             "source": "LinkedIn",
             "date": "Apr 5, 2026",
@@ -171,14 +171,14 @@ def get_linkedin_posts():
             "type": "Blog",
         },
         {
-            "title": "The Authorization Gap",
-            "summary": "It appears across enterprise and government, AI-driven programs are not failing, but waiting...",
+            "title": "From Investment to Impact: Why Orchestration Matters",
+            "summary": "Across enterprise and government, outcomes  don't follow investment, but orchestration.",
             "link": "https://www.linkedin.com/feed/",
             "source": "LinkedIn",
             "date": "Apr 7, 2026",
             "image": "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=340&fit=crop",
             "tag": "LinkedIn",
-            "type": "Blog",
+            "type": "Post",
         },
         {
             "title": "The 5 AI Skills Federal Agencies Are Hiring For Right Now",
@@ -205,7 +205,7 @@ def get_linkedin_posts():
 def get_youtube_posts():
     return [
         {
-            "title": "Is Chaos an Oppportunity for Government Contractors?",
+            "title": "Chaos is Opportunity in GovCon",
             "summary": "Chaos, Capture and Money - Neil McDonnell, GovCon chamber of commerce founder, Best8a.com Interview",
             "link": "https://www.youtube.com/watch?v=lsWUiMhYhSc",
             "source": "YouTube",
