@@ -471,3 +471,33 @@ footer {
   display: block;
   margin-bottom: 10px;
 }
+/* YouTube card logo */
+.youtube-card-logo {
+  width: 24px;
+  height: 24px;
+  fill: #ff0000;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Video thumbnail play button overlay */
+.video-thumb {
+  position: relative;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 0, 0, 0.85);
+  color: white;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  pointer-events: none;
+}

@@ -17,13 +17,12 @@ FALLBACK_IMAGES = {
     "VentureBeat": "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=600&h=340&fit=crop",
     "TechCrunch": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=340&fit=crop",
     "LinkedIn": "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=340&fit=crop",
+    "YouTube": "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=600&h=340&fit=crop",
 }
 
 BLOCKLIST = [
-    # Word games
     "Wordle", "Quordle", "Strands", "NYT", "crossword", "puzzle",
     "Hints", "Clues", "Answers Today",
-    # Entertainment
     "WWE", "NFL", "NBA", "MLB", "UFC",
     "celebrity", "Celebrity",
     "movie", "Movie", "Netflix", "Disney",
@@ -31,17 +30,13 @@ BLOCKLIST = [
     "Invincible", "Marvel", "DC Comics",
     "music", "album", "singer", "rapper",
     "Grammy", "Oscar", "Emmy",
-    # Nature/off-topic
     "shark", "Shark", "whale", "dolphin",
     "AstroTurf", "fake grass",
     "Desalination", "Download:",
-    # Sports
     "Super Bowl", "World Series", "March Madness",
     "quarterback", "touchdown", "home run",
-    # Gaming
     "video game", "Video Game", "Xbox", "PlayStation",
     "Minecraft", "Fortnite", "Nintendo",
-    # Apple/consumer tech
     "MacBook", "iPhone", "iPad", "Apple Watch",
 ]
 
@@ -204,5 +199,49 @@ def get_linkedin_posts():
             "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&h=340&fit=crop",
             "tag": "LinkedIn",
             "type": "Post",
+        },
+    ]
+
+def get_youtube_posts():
+    return [
+        {
+            "title": "AI Governance Frameworks for Federal Contractors — A Deep Dive",
+            "summary": "A comprehensive walkthrough of AI governance best practices tailored for federal contractors navigating compliance in 2026.",
+            "link": "https://www.youtube.com/@granvillesystems",
+            "source": "YouTube",
+            "date": "Apr 8, 2026",
+            "image": "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=600&h=340&fit=crop",
+            "tag": "YouTube",
+            "type": "Video",
+        },
+        {
+            "title": "Mission Value Orchestration: Live Demo and Walkthrough",
+            "summary": "Watch our team demonstrate the Mission Value Orchestration framework in action — from ATO approval to full operational deployment.",
+            "link": "https://www.youtube.com/@granvillesystems",
+            "source": "YouTube",
+            "date": "Apr 6, 2026",
+            "image": "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=600&h=340&fit=crop",
+            "tag": "YouTube",
+            "type": "Video",
+        },
+        {
+            "title": "Federal AI Strategy: What Every GovCon Leader Needs to Know",
+            "summary": "Our principal consultant breaks down the AI executive orders, NIST frameworks and what they mean for your federal contracting strategy in 2026.",
+            "link": "https://www.youtube.com/@granvillesystems",
+            "source": "YouTube",
+            "date": "Apr 4, 2026",
+            "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&h=340&fit=crop",
+            "tag": "YouTube",
+            "type": "Video",
+        },
+        {
+            "title": "Digital Transformation Roadmap: From Strategy to Execution",
+            "summary": "Step-by-step guidance on building a digital transformation roadmap that survives contact with federal procurement reality.",
+            "link": "https://www.youtube.com/@granvillesystems",
+            "source": "YouTube",
+            "date": "Apr 2, 2026",
+            "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=340&fit=crop",
+            "tag": "YouTube",
+            "type": "Video",
         },
     ]
