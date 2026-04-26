@@ -160,15 +160,25 @@ def get_articles():
 
 def get_linkedin_posts():
     return [
+             {
+            "title": "The Conductor"
+            "summary:"Most organizations invest heavily in innovation but struggle to deliver results—the difference is not spending, it is coordination.",
+            "link": "https://www.linkedin.com/feed/",
+            "source": "LinkedIn",
+            "date": "Apr 5, 2026",
+            "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&h=340&fit=crop",
+            "tag": "LinkedIn",
+            "type": "Blog",
+        },
         {
-            "title": "Why AI Governance is the #1 Priority for Federal Contractors in 2026",
-            "summary": "Organizations that build trust through transparent AI frameworks are winning more contracts.",
+            "title": "The Authorization Gap",
+            "summary": "Enterprise technology programs across every sector share a familiar pattern",
             "link": "https://www.linkedin.com/feed/",
             "source": "LinkedIn",
             "date": "Apr 7, 2026",
             "image": "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=340&fit=crop",
             "tag": "LinkedIn",
-            "type": "Post",
+            "type": "Blog",
         },
         {
             "title": "The 5 AI Skills Federal Agencies Are Hiring For Right Now",
@@ -177,16 +187,6 @@ def get_linkedin_posts():
             "source": "LinkedIn",
             "date": "Apr 6, 2026",
             "image": "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&h=340&fit=crop",
-            "tag": "LinkedIn",
-            "type": "Post",
-        },
-        {
-            "title": "Mission Value Orchestration: From Authorization to Actualization",
-            "summary": "The firms closing the gap between ATO approval and real operational value.",
-            "link": "https://www.linkedin.com/feed/",
-            "source": "LinkedIn",
-            "date": "Apr 5, 2026",
-            "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&h=340&fit=crop",
             "tag": "LinkedIn",
             "type": "Post",
         },
@@ -205,43 +205,14 @@ def get_linkedin_posts():
 def get_youtube_posts():
     return [
         {
-            "title": "State of GovCon 2026 | Massive Shifts Every Federal Contractor Must Master to Win",
-            "summary": "A deep dive into the massive shifts reshaping federal contracting in 2026. Essential viewing for every GovCon leader navigating the new landscape.",
-            "link": "https://www.youtube.com/watch?v=N-_JizpNr48&t=3s",
+            "title": "Federal Capture Planning - The Key to AI Opportunity in 2026",
+            "summary": "Research alone does not win government contracts  ",
+            "link": "https://www.youtube.com/watch?v=B7uah8vD9mc",
             "source": "YouTube",
             "date": "2026",
-            "image": "https://img.youtube.com/vi/N-_JizpNr48/maxresdefault.jpg",
+            "image": "https://img.youtube.com/vi/B7uah8vD9mc/maxresdefault.jpg",
             "tag": "YouTube",
             "type": "Video",
         },
-        {
-            "title": "AI Governance Frameworks for Federal Contractors — A Deep Dive",
-            "summary": "A comprehensive walkthrough of AI governance best practices tailored for federal contractors navigating compliance in 2026.",
-            "link": "https://www.youtube.com/@granvillesystems",
-            "source": "YouTube",
-            "date": "Apr 8, 2026",
-            "image": "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=600&h=340&fit=crop",
-            "tag": "YouTube",
-            "type": "Video",
-        },
-        {
-            "title": "Mission Value Orchestration: Live Demo and Walkthrough",
-            "summary": "Watch our team demonstrate the Mission Value Orchestration framework in action — from ATO approval to full operational deployment.",
-            "link": "https://www.youtube.com/@granvillesystems",
-            "source": "YouTube",
-            "date": "Apr 6, 2026",
-            "image": "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=600&h=340&fit=crop",
-            "tag": "YouTube",
-            "type": "Video",
-        },
-        {
-            "title": "Federal AI Strategy: What Every GovCon Leader Needs to Know",
-            "summary": "Our principal consultant breaks down the AI executive orders, NIST frameworks and what they mean for your federal contracting strategy in 2026.",
-            "link": "https://www.youtube.com/@granvillesystems",
-            "source": "YouTube",
-            "date": "Apr 4, 2026",
-            "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&h=340&fit=crop",
-            "tag": "YouTube",
-            "type": "Video",
-        },
+    
     ]
