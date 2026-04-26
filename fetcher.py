@@ -54,14 +54,14 @@ PINNED_ARTICLES = [
 ]
 
 PINNED_THREE_COL = [
-    {
-        "title": "AI World Models: What Are They And Why Should You Care",
-        "summary": "World models are getting substantial funding. What is a world model, how does it compare to a large language model, and what are the implications for business?...",
-        "link": "https://www.forbes.com/sites/forbestechcouncil/",
-        "source": "Forbes",
-        "date": "Sun, 19 Apr 2026",
-        "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&h=340&fit=crop",
-        "tag": "Forbes",
+  {
+        "title": "Three reasons why DeepSeek's new model matters",
+        "summary": "DeepSeek's latest model is turning heads across the AI industry. Here are three reasons why it represents a significant shift in the competitive landscape...",
+        "link": "https://www.technologyreview.com/",
+        "source": "MIT Tech Review",
+        "date": "Apr 2026",
+        "image": "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&h=340&fit=crop",
+        "tag": "MIT Review",
         "type": "Article",
     },
     {
@@ -148,7 +148,7 @@ def get_hero_article():
     return get_all_articles()[0]
 
 def get_recommended():
-    return get_all_articles()[1:6]
+    return get_all_articles()[1:5]
 
 def get_three_col():
     if PINNED_THREE_COL:
