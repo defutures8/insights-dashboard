@@ -164,7 +164,7 @@ def get_articles():
 def get_linkedin_posts():
     return [
         {
-            "title": "From Authorization to Actualization: Where Mission Value Breaks Down",
+            "title": "The Conductor in Orchestrating Value Actualization",
             "summary": "Initiatives start with intent, but seems to lose value in execution across the lifecycle.",
             "link": "https://www.linkedin.com/feed/",
             "source": "LinkedIn",
@@ -174,8 +174,8 @@ def get_linkedin_posts():
             "type": "Blog",
         },
                {
-            "title": "Digital Transformation Roadmap for GovCon in 2026",
-            "summary": "A structured approach to modernizing federal IT infrastructure while maintaining compliance.",
+            "title": "Before Claude, There Was A Paperclip With Eyes",
+            "summary":"From the first digital assistants to the AI agents of today. Why 2026 feels like in 1996...?",
             "link": "https://www.linkedin.com/feed/",
             "source": "LinkedIn",
             "date": "Apr 4, 2026",
@@ -184,7 +184,7 @@ def get_linkedin_posts():
             "type": "Post",
         },
         {
-            "title": "The 5 AI Skills Federal Agencies Are Hiring",
+            "title": "The 5 AI Skills that are cross sectors and cross functional",
             "summary": "From prompt engineering to ATO acceleration, agencies are moving fast into Q2 2026.",
             "link": "https://www.linkedin.com/feed/",
             "source": "LinkedIn",
