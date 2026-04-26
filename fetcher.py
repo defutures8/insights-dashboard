@@ -118,7 +118,9 @@ def is_blocked(title):
     return any(word.lower() in title.lower() for word in BLOCKLIST)
 
 def get_all_articles():
-    articles = list(PINNED_ARTICLES)
+    import random
+    pinned = list(PINNED_ARTICLES)
+    articles = []
     for source, url in FEEDS.items():
         try:
             feed = feedparser.parse(url)
@@ -139,13 +141,14 @@ def get_all_articles():
                 })
         except Exception as e:
             print(f"Feed error for {source}: {e}")
-    return articles
+    random.shuffle(articles)
+    return pinned + articles
 
 def get_hero_article():
     return get_all_articles()[0]
 
 def get_recommended():
-    return get_all_articles()[1:4]
+    return get_all_articles()[1:6]
 
 def get_three_col():
     if PINNED_THREE_COL:
