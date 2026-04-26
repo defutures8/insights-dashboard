@@ -463,3 +463,11 @@ footer {
   color: #999;
   font-style: italic;
 }
+
+.linkedin-card-logo {
+  width: 20px;
+  height: 20px;
+  fill: #0a66c2;
+  display: block;
+  margin-bottom: 10px;
+}
