@@ -205,6 +205,16 @@ def get_linkedin_posts():
 def get_youtube_posts():
     return [
         {
+            "title": "State of GovCon 2026 | Massive Shifts Every Federal Contractor Must Master to Win",
+            "summary": "A deep dive into the massive shifts reshaping federal contracting in 2026. Essential viewing for every GovCon leader navigating the new landscape.",
+            "link": "https://www.youtube.com/watch?v=N-_JizpNr48&t=3s",
+            "source": "YouTube",
+            "date": "2026",
+            "image": "https://img.youtube.com/vi/N-_JizpNr48/maxresdefault.jpg",
+            "tag": "YouTube",
+            "type": "Video",
+        },
+        {
             "title": "AI Governance Frameworks for Federal Contractors — A Deep Dive",
             "summary": "A comprehensive walkthrough of AI governance best practices tailored for federal contractors navigating compliance in 2026.",
             "link": "https://www.youtube.com/@granvillesystems",
@@ -231,16 +241,6 @@ def get_youtube_posts():
             "source": "YouTube",
             "date": "Apr 4, 2026",
             "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&h=340&fit=crop",
-            "tag": "YouTube",
-            "type": "Video",
-        },
-        {
-            "title": "Digital Transformation Roadmap: From Strategy to Execution",
-            "summary": "Step-by-step guidance on building a digital transformation roadmap that survives contact with federal procurement reality.",
-            "link": "https://www.youtube.com/@granvillesystems",
-            "source": "YouTube",
-            "date": "Apr 2, 2026",
-            "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=340&fit=crop",
             "tag": "YouTube",
             "type": "Video",
         },

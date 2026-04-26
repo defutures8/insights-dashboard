@@ -90,10 +90,26 @@
       {% endfor %}
     </div>
 
-    <!-- LinkedIn row -->
+    <!-- Mixed LinkedIn + YouTube row -->
     <div class="grid grid-4">
-      {% for post in linkedin %}
+      {% for post in social %}
       <a href="{{ post.link }}" target="_blank" class="card card-compact">
+
+        {% if post.tag == "YouTube" %}
+        <div class="card-image video-thumb">
+          <img src="{{ post.image }}" alt="{{ post.title }}"
+               onerror="this.src='https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=400&h=240&fit=crop'">
+          <div class="play-button">&#9654;</div>
+        </div>
+        <div class="card-body">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="youtube-card-logo">
+            <path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/>
+          </svg>
+          <h2 class="card-title small-title">{{ post.title }}</h2>
+          <p class="card-summary small-summary">{{ post.summary }}</p>
+        </div>
+
+        {% else %}
         <div class="card-image">
           <img src="{{ post.image }}" alt="{{ post.title }}"
                onerror="this.src='https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=240&fit=crop'">
@@ -105,32 +121,10 @@
           <h2 class="card-title small-title">{{ post.title }}</h2>
           <p class="card-summary small-summary">{{ post.summary }}</p>
         </div>
+        {% endif %}
+
         <div class="card-meta">
           <span class="meta-type">{{ post.type }} &bull; {{ post.date }}</span>
-          <span class="bookmark">&#128278;</span>
-        </div>
-      </a>
-      {% endfor %}
-    </div>
-
-    <!-- YouTube row -->
-    <div class="grid grid-4">
-      {% for video in youtube %}
-      <a href="{{ video.link }}" target="_blank" class="card card-compact">
-        <div class="card-image video-thumb">
-          <img src="{{ video.image }}" alt="{{ video.title }}"
-               onerror="this.src='https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=400&h=240&fit=crop'">
-          <div class="play-button">&#9654;</div>
-        </div>
-        <div class="card-body">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="youtube-card-logo">
-            <path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/>
-          </svg>
-          <h2 class="card-title small-title">{{ video.title }}</h2>
-          <p class="card-summary small-summary">{{ video.summary }}</p>
-        </div>
-        <div class="card-meta">
-          <span class="meta-type">{{ video.type }} &bull; {{ video.date }}</span>
           <span class="bookmark">&#128278;</span>
         </div>
       </a>

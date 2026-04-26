@@ -6,7 +6,7 @@ body {
   color: #1a1a1a;
 }
 
-/* Header - Granville Wix style dark */
+/* Header */
 header {
   display: flex;
   align-items: center;
@@ -40,7 +40,6 @@ header {
 }
 
 .header-nav a:hover { color: #ff3c5f; }
-
 .header-nav a.active { color: #ff3c5f; }
 
 /* Page heading */
@@ -75,22 +74,26 @@ header {
 /* Main */
 main { padding: 0 48px 64px; }
 
-/* Hero solo */
-.hero-solo {
-  margin-bottom: 48px;
+/* Hero section */
+.hero-section {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 40px;
+  margin-bottom: 56px;
   border-bottom: 1px solid #e0e0e0;
-  padding-bottom: 48px;
+  padding-bottom: 56px;
 }
 
-.hero-solo .hero-card {
-  display: block;
+.hero-card {
   text-decoration: none;
   color: inherit;
+  display: flex;
+  flex-direction: column;
 }
 
 .hero-image img {
   width: 100%;
-  height: 420px;
+  height: 380px;
   object-fit: cover;
   display: block;
   margin-bottom: 20px;
@@ -112,6 +115,65 @@ main { padding: 0 48px 64px; }
   line-height: 1.6;
   margin-bottom: 16px;
   max-width: 800px;
+}
+
+/* Recommended panel */
+.recommended-panel {
+  border-left: 1px solid #e0e0e0;
+  padding-left: 32px;
+}
+
+.recommended-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #cc0000;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #cc0000;
+}
+
+.recommended-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.recommended-item {
+  display: flex;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid #e8e8e8;
+  text-decoration: none;
+  color: inherit;
+}
+
+.recommended-item:hover .rec-title { color: #cc0000; }
+
+.rec-number {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ddd;
+  min-width: 20px;
+  padding-top: 2px;
+}
+
+.rec-body { flex: 1; }
+
+.small-tag { font-size: 0.65rem !important; }
+
+.rec-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #111;
+  margin: 4px 0 6px;
+}
+
+.rec-type {
+  font-size: 0.72rem;
+  color: #999;
+  font-style: italic;
 }
 
 /* Grids */
@@ -201,38 +263,45 @@ main { padding: 0 48px 64px; }
   cursor: pointer;
 }
 
-/* Section header */
-.section-header {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin: 0 0 28px;
-  border-bottom: 2px solid #0a66c2;
-  padding-bottom: 12px;
+/* LinkedIn card logo */
+.linkedin-card-logo {
+  width: 20px;
+  height: 20px;
+  fill: #0a66c2;
+  display: block;
+  margin-bottom: 10px;
 }
 
-.section-header h2 {
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: #0a66c2;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+/* YouTube card logo */
+.youtube-card-logo {
+  width: 24px;
+  height: 24px;
+  fill: #ff0000;
+  display: block;
+  margin-bottom: 10px;
 }
 
-.linkedin-icon {
-  background: #0a66c2;
+/* Video thumbnail play button overlay */
+.video-thumb {
+  position: relative;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 0, 0, 0.85);
   color: white;
-  font-weight: 700;
-  font-size: 0.8rem;
-  width: 22px;
-  height: 22px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 4px;
+  font-size: 1rem;
+  pointer-events: none;
 }
-
-.linkedin-tag { color: #0a66c2 !important; }
 
 /* CTA Banner */
 .cta-banner {
@@ -284,7 +353,7 @@ main { padding: 0 48px 64px; }
   background: linear-gradient(135deg, #000000 0%, #ff3c5f 100%);
 }
 
-/* Footer - Granville Wix style dark */
+/* Footer */
 footer {
   background: #000000;
   color: #ffffff;
@@ -302,7 +371,6 @@ footer {
   height: 48px;
   width: auto;
   object-fit: contain;
-  filter: brightness(0) invert(1);
   margin-bottom: 20px;
   display: block;
 }
@@ -329,9 +397,7 @@ footer {
 
 .footer-nav-col a:hover { color: #ff3c5f; }
 
-.footer-naics-col {
-  padding-top: 8px;
-}
+.footer-naics-col { padding-top: 8px; }
 
 .naics-title {
   font-size: 0.9rem;
@@ -346,9 +412,7 @@ footer {
   line-height: 1.9;
 }
 
-.footer-naics-col strong {
-  color: #ffffff;
-}
+.footer-naics-col strong { color: #ffffff; }
 
 .footer-bottom {
   display: flex;
@@ -370,6 +434,8 @@ footer {
 /* Responsive */
 @media (max-width: 1100px) {
   .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .hero-section { grid-template-columns: 1fr; }
+  .recommended-panel { border-left: none; border-top: 1px solid #e0e0e0; padding: 24px 0 0; }
   .footer-top { grid-template-columns: 1fr 1fr; }
   .footer-naics-col { grid-column: span 2; }
 }
@@ -387,117 +453,4 @@ footer {
 @media (max-width: 600px) {
   .grid-3, .grid-4 { grid-template-columns: 1fr; }
   .header-nav { display: none; }
-}
-
-/* Hero section with recommended panel */
-.hero-section {
-  display: grid;
-  grid-template-columns: 1fr 320px;
-  gap: 40px;
-  margin-bottom: 56px;
-  border-bottom: 1px solid #e0e0e0;
-  padding-bottom: 56px;
-}
-
-.hero-card {
-  text-decoration: none;
-  color: inherit;
-  display: flex;
-  flex-direction: column;
-}
-
-.recommended-panel {
-  border-left: 1px solid #e0e0e0;
-  padding-left: 32px;
-}
-
-.recommended-title {
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: #cc0000;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 20px;
-  padding-bottom: 12px;
-  border-bottom: 2px solid #cc0000;
-}
-
-.recommended-list {
-  display: flex;
-  flex-direction: column;
-}
-
-.recommended-item {
-  display: flex;
-  gap: 16px;
-  padding: 16px 0;
-  border-bottom: 1px solid #e8e8e8;
-  text-decoration: none;
-  color: inherit;
-}
-
-.recommended-item:hover .rec-title { color: #cc0000; }
-
-.rec-number {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #ddd;
-  min-width: 20px;
-  padding-top: 2px;
-}
-
-.rec-body { flex: 1; }
-
-.small-tag { font-size: 0.65rem !important; }
-
-.rec-title {
-  font-size: 0.85rem;
-  font-weight: 600;
-  line-height: 1.4;
-  color: #111;
-  margin: 4px 0 6px;
-}
-
-.rec-type {
-  font-size: 0.72rem;
-  color: #999;
-  font-style: italic;
-}
-
-.linkedin-card-logo {
-  width: 20px;
-  height: 20px;
-  fill: #0a66c2;
-  display: block;
-  margin-bottom: 10px;
-}
-/* YouTube card logo */
-.youtube-card-logo {
-  width: 24px;
-  height: 24px;
-  fill: #ff0000;
-  display: block;
-  margin-bottom: 10px;
-}
-
-/* Video thumbnail play button overlay */
-.video-thumb {
-  position: relative;
-}
-
-.play-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(255, 0, 0, 0.85);
-  color: white;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1rem;
-  pointer-events: none;
 }
