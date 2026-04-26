@@ -388,3 +388,78 @@ footer {
   .grid-3, .grid-4 { grid-template-columns: 1fr; }
   .header-nav { display: none; }
 }
+
+/* Hero section with recommended panel */
+.hero-section {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 40px;
+  margin-bottom: 56px;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 56px;
+}
+
+.hero-card {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+}
+
+.recommended-panel {
+  border-left: 1px solid #e0e0e0;
+  padding-left: 32px;
+}
+
+.recommended-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #cc0000;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #cc0000;
+}
+
+.recommended-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.recommended-item {
+  display: flex;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid #e8e8e8;
+  text-decoration: none;
+  color: inherit;
+}
+
+.recommended-item:hover .rec-title { color: #cc0000; }
+
+.rec-number {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ddd;
+  min-width: 20px;
+  padding-top: 2px;
+}
+
+.rec-body { flex: 1; }
+
+.small-tag { font-size: 0.65rem !important; }
+
+.rec-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #111;
+  margin: 4px 0 6px;
+}
+
+.rec-type {
+  font-size: 0.72rem;
+  color: #999;
+  font-style: italic;
+}
